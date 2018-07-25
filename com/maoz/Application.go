@@ -59,9 +59,11 @@ func handleConnection(c websocket.Connection) {
 
 		rpm = (9000*loop)/100
 		speed = (260*loop)/100
-		fuel = (100*loop)/100
+		fuel = (100*(100-loop))/100
 
-		fmt.Print(rpm,speed,fuel)
+		fmt.Println("####")
+		fmt.Println(rpm,speed,fuel)
+		fmt.Println("####")
 		c.To(websocket.All).Emit("rpm", rpm)
 		c.To(websocket.All).Emit("speed", speed)
 		c.To(websocket.All).Emit("fuel", fuel)
@@ -69,6 +71,11 @@ func handleConnection(c websocket.Connection) {
 		if(loop == 100){
 			loop = 0
 		}
+
+		if(loop == 0){
+			time.Sleep(5 * time.Second)
+		}
+
 		loop++
 	}
 	// Read events from browser
