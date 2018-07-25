@@ -49,12 +49,27 @@ func setupWebsocket(app *iris.Application) {
 
 func handleConnection(c websocket.Connection) {
 
-
+	loop := 1
 	for true {
-		time.Sleep(1*time.Second)
-		num := rand.Intn(100)
-		fmt.Print(num)
-		c.To(websocket.All).Emit("chat", num)
+
+		time.Sleep(100 * time.Millisecond)
+		rpm := rand.Intn(9000)
+		speed := rand.Intn(260)
+		fuel := rand.Intn(100)
+
+		rpm = (9000*loop)/100
+		speed = (260*loop)/100
+		fuel = (100*loop)/100
+
+		fmt.Print(rpm,speed,fuel)
+		c.To(websocket.All).Emit("rpm", rpm)
+		c.To(websocket.All).Emit("speed", speed)
+		c.To(websocket.All).Emit("fuel", fuel)
+
+		if(loop == 100){
+			loop = 0
+		}
+		loop++
 	}
 	// Read events from browser
 	c.On("chat", func(msg string) {
