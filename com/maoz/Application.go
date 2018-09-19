@@ -1,10 +1,11 @@
 package main
 
 import (
+	"db"
+	"route"
+	"websocket"
+
 	"github.com/kataras/iris"
-	"github.com/pongpat705/go-socket/com/maoz/route"
-	"github.com/pongpat705/go-socket/com/maoz/websocket"
-	"github.com/pongpat705/go-socket/com/maoz/db"
 )
 
 func main() {
