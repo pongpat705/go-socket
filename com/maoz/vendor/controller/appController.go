@@ -1,8 +1,8 @@
 package controller
 
 import (
-	"container/list"
-	"db"
+	"dao"
+	"model"
 
 	"github.com/kataras/iris"
 )
@@ -15,13 +15,9 @@ func Landing(ctx iris.Context) {
 }
 
 func LoadUsers(ctx iris.Context) {
-	db.InitDB()
-	var statement string
-	statement = "select * from user"
-	var resultData list.List
-	resultData = db.DoQuery(statement)
-	//close on end of method
-	defer db.CloseDb()
+
+	var resultData []model.User
+	resultData = dao.GetUsers()
 
 	//prepare data
 	ctx.ViewData("userList", resultData)
@@ -30,5 +26,16 @@ func LoadUsers(ctx iris.Context) {
 		ctx.StatusCode(iris.StatusInternalServerError)
 		ctx.Writef(err.Error())
 	}
+
+}
+
+func LoadUsersWithJson(ctx iris.Context) {
+
+	var resultData []model.User
+	resultData = dao.GetUsers()
+
+	//prepare data
+
+	ctx.JSON(iris.Map{"result": resultData, "lenght": len(resultData)})
 
 }

@@ -24,6 +24,7 @@ func GetRoute() *iris.Application {
 	//define route
 	app.Get("/app", controller.Landing)
 	app.Get("/users", controller.LoadUsers)
+	app.Get("/users.json", controller.LoadUsersWithJson)
 
 	return app
 }
