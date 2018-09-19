@@ -1,7 +1,6 @@
 package main
 
 import (
-	"db"
 	"route"
 	"websocket"
 
@@ -10,9 +9,7 @@ import (
 
 func main() {
 	app := route.GetRoute()
-	db.InitDB()
-	db.DoQuery()
-	db.CloseDb()
+
 	websocket.GetSocket(app)
 
 	// x2
