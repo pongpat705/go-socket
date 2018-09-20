@@ -18,10 +18,11 @@ func LoadUsers(ctx iris.Context) {
 
 	var resultData []model.User
 	resultData = dao.GetUsers()
+	jsonByte := iris.Map{"data": resultData}
 
 	//prepare data
 	ctx.ViewData("userList", resultData)
-
+	ctx.ViewData("userListJson", jsonByte)
 	if err := ctx.View("users.html"); err != nil {
 		ctx.StatusCode(iris.StatusInternalServerError)
 		ctx.Writef(err.Error())

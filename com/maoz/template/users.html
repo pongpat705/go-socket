@@ -1,0 +1,10 @@
+<div style="color: blue">
+
+	<h1>Page 2</h1>
+	{{range .userList}}
+    <li><a href="{{$.Name}}/{{.}}">{{.}}</a></li>
+	{{end}}
+
+	{{.userListJson}}
+
+</div>

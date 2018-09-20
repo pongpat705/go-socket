@@ -9,8 +9,11 @@ import (
 func GetRoute() *iris.Application {
 	app := iris.New()
 
+	//static
+	app.StaticServe("./static", "/static")
+
 	//template
-	template := iris.HTML("./html", ".html")
+	template := iris.HTML("./template", ".html")
 	//Layout
 	template.Layout("layout.html")
 	//function

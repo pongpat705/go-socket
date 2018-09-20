@@ -2,12 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Layout</title>
+    <title>Golang MVC</title>
 </head>
 <body>
   <h1>This is the global layout</h1>
- 	<br />
+	<!-- Render the header here -->
+	{{ render "header.html"}}
  	<!-- Render the current template here -->
- 	{{ yield }}
+ 	  {{ yield }}
+  <!-- Render the footer here -->
+  {{ render "footer.html"}}
 </body>
 </html>
