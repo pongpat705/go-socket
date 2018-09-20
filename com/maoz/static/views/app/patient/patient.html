@@ -1,0 +1,12 @@
+<div class="p-x m-t-lg">
+  <div class="row">
+  		<button class="btn btn-md btn-info" ng-if="checkPermission('ROLE_PROF')" title="new patient profile" ng-click="addNewPatient()" ><i class="fa fa-plus" aria-hidden="true"></i> เพิ่มข้อมูลผู้ป่วย</button>
+  </div>
+  <br>
+  <div class="row">
+  	<b><p>ข้อมูลผู้ป่วย สำหรับติดตามข้อมูลผู้ป่วยประจำวัน</p></b>
+  	<b><p style="color: red; font-style: oblique;">(ส่วนบันทึกข้อมูลสำหรับ นักศึกษากายภาพบำบัดและเภสัชศาสตร์ ให้เลือกเมนูด้านบน)</p></b>
+	<div ng-if="patientGridOptions.totalItems > 0" ui-grid="patientGridOptions" class="grid" ui-grid-pagination ui-grid-resize-columns ui-grid-auto-fit-columns>
+  	</div>
+  </div>
+</div>

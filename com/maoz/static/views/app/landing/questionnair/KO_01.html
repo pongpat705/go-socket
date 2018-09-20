@@ -1,0 +1,12 @@
+		<div class="form-group text-left">
+			<label class="col-sm-2 bold control-label">{{param.TX_QUESTION.KO_01.infoTh}}</label>
+			<b>{{txn.koAns1}}</b>
+			    <div layout>
+			      <md-slider flex class="md-primary" md-discrete ng-disabled="!checkPermission('ROLE_PATIEN')" ng-model="txn.koAns1" step="1" min="0" max="10" aria-label="rating">
+			      </md-slider>
+			    </div>
+		    	  <label class="col-sm-2 bold control-label"></label>
+		    	  <label class="col-sm-2">ทำได้ดีมาก</label>
+			      <label class="col-sm-6"></label>
+			      <label class="col-sm-2 text-right">เป็นปัญหามากที่สุด (ไม่สามารถทำได้)</label>
+		</div>

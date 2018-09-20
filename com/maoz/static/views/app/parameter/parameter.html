@@ -1,0 +1,15 @@
+<div class="p-x">
+  <div class="row">
+  	
+  </div>
+  <br>
+  <div class="row">
+ 	<h2 class="page-header">Parameter List</h2>
+    <table ng-table="tableParams" show-filter="true" class="table table-bordered table-striped">
+      <tr ng-repeat="row in params">
+        <td title="'Username'" filter="{userName: 'text'}" sortable="'userName'">{{row.userName}}</td>
+        <td title="'Password'" sortable="'password'">{{row.password}}</td>
+      </tr>
+    </table>
+  </div>
+</div>

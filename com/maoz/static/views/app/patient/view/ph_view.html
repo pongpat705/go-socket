@@ -1,0 +1,118 @@
+  		<form class="form-horizontal" role="form">
+			<div class="form-group">
+	          		<div class="col-sm-12">
+	          			<table class="table table-fixed-layout">
+	          			 <thead>
+	          				<tr>
+	          					<th colspan="12">ความร่วมมือในการใช้ยาของผู้ป่วย</th>
+	          				</tr>
+	          				<tr>
+	          					<th colspan="12">Patient Compliance</th>
+	          				</tr>
+	          				<tr>
+	          					<th colspan="2">รายการยาและขนาดยา (a)</th>
+	          					<th colspan="1">ท่านรับประทานยานี้ครั้งละกี่เม็ด(b)</th>
+	          					<th colspan="2">ท่านรับประทานยานี้ วันละกี่ครั้ง (c)</th>
+	          					<th colspan="1">ท่านรับประทานยานี้ สัปดาห์ละกี่วัน (d)</th>
+	          					<th colspan="2">ท่านขาดยานี้กี่ครั้ง/ ไม่ได้รับประทานยานี้กี่ครั้ง (e)</th>
+	          					<th colspan="1">ท่านรู้หรือไม่ว่ายานี้ใช้รักษาโรคอะไร (f)</th>
+	          					<th colspan="1">ท่านรับประทานยานี้แล้วได้ผลดีหรือไม่ มาก-น้อยเพียงใด (g)</th>
+	          					<th colspan="2">ท่านมีปัญหาจาการใช้ยานี้หรือไม่ ปัญหารบกวนมากน้อยเพียงใด (h)</th>
+	          				</tr>
+	          				<tr>
+	          					<th>ลำดับที่</th>
+	          					<th>ชื่อยา/ความแรง (มิลลิกรัม)</th>
+	          					<th></th>
+	          					<th>ครั้ง/วัน</th>
+	          					<th>เวลาที่ รับประทาน</th>
+	          					<th></th>
+	          					<th>ครั้ง </th>
+	          					<th>เหตุผล</th>
+	          					<th> </th>
+	          					<th> </th>
+	          					<th>รายละเอีดปัญหา</th>
+	          					<th>ความรุนแรง</th>
+	          				</tr>
+	          			</thead>
+	          			<tbody>
+	          				<tr ng-repeat="c in compliances">
+	          					<td>{{$index+1}}</td>
+	          					<td>{{c.drug}}</td>
+	          					<td>{{c.takeQty}}</td>
+	          					<td>{{c.takePerDay}}</td>
+	          					<td>{{c.takeTime | date: "HH:mm"}}</td>
+	          					<td>{{c.takePerWeek}}</td>
+	          					<td>{{c.missTime}}</td>
+	          					<td>{{c.missReason}}</td>
+	          					<td>{{c.knowsDrug}}</td>
+	          					<td>{{c.resultDrug}}</td>
+	          					<td>{{c.problemDesc}}</td>
+	          					<td>{{c.problemIntens}}</td>
+	          				</tr>
+	          			</tbody>
+	          			</table>
+		          	</div>
+	        </div>
+			<div class="form-group">
+			  	<div class="col-sm-12">
+		            	<table class="table table-fixed-layout">
+		            		<thead>
+		            			<tr>
+		            				<td colspan="7">ปัญหาการใช้ยา (DRPs)</td>
+		            			</tr>
+		            			<tr>
+		            				<td colspan="7">Drug-Related Problems (DRPs) Report Form</td>
+		            			</tr>
+								<tr>
+									<th>Date</th>
+									<th>DRPs</th>
+									<th>Patient Name/HN</th>
+									<th>Details</th>
+									<th>Intervention</th>
+									<th>Physician Response</th>
+									<th>F/U</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="d in drps">
+									<td>{{d.date | date:"dd/MM/yyyy"}}</td>
+									<td>{{d.drps}}</td>
+									<td>{{d.patientName}}</td>
+									<td>{{d.detail}}</td>
+									<td>{{d.intervention}}</td>
+									<td>{{d.physicalResponse}}</td>
+									<td>{{d.fu}}</td>
+								</tr>
+							</tbody>
+						</table>
+				</div>
+			</div>
+			<div class="form-group">
+			  	<div class="col-sm-12">
+		            	<table class="table table-fixed-layout">
+		            		<thead>
+		            			<tr>
+		            				<td colspan="4">แบบทวนรายการยา</td>
+		            			</tr>
+		            			<tr>
+		            				<td colspan="4">Medication Reconciliation</td>
+		            			</tr>
+								<tr>
+									<th>รายการยา</th>
+									<th>มิลลิกรัม(mg)</th>
+									<th>วันที่</th>
+									<th>หมายเหตุ</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="r in reconcils">
+									<td>{{r.drug}}</td>
+									<td>{{r.volume}}</td>
+									<td>{{r.date | date:"dd/MM/yyyy"}}</td>
+									<td>{{r.note}}</td>
+								</tr>
+							</tbody>
+						</table>
+				</div>
+			</div>
+  		</form>

@@ -1,0 +1,48 @@
+    /* fluke */
+.valdr-message {
+    display: none;
+}
+
+.valdr-message.ng-invalid.ng-dirty.ng-touched, .ng-submitted .valdr-message.ng-invalid {
+    display: inline;
+    color: red;
+}
+
+.valdr-message:before {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    content: "\e101";
+    margin-right: 5px;
+}
+
+input.ng-invalid.ng-dirty.ng-touched, .ng-submitted input.ng-invalid {
+    background: #ffa8a8;
+}
+
+.valdr-invalid-dirty-touched-group label, .ng-submitted .form-group.ng-invalid label {
+    /*color: red;*/
+}
+
+.valdr-invalid-dirty-touched-group, .ng-submitted {
+    color: #a94442;
+}
+
+ .valdr-invalid-dirty-touched-group.input-group {
+     color: #a94442;
+ }
+    
+.valdr-validation-summary {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.ng-valid{
+    color: #333;
+}
