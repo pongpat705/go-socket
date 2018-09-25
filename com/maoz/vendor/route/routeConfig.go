@@ -27,7 +27,7 @@ func GetRoute() *iris.Application {
 
 	//define route
 	app.Get("/app", controller.Landing)
-	app.Get("/users", controller.LoadUsers)
+	app.Get("/story", controller.LoadStorys)
 
 	crs := cors.New(cors.Options{
 		AllowedOrigins:   []string{"*"}, // allows everything, use that to change the hosts.

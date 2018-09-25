@@ -11,7 +11,7 @@ var db *sql.DB
 
 func InitDB() {
 	var err error
-	db, err = sql.Open("mysql", "pongpat705:d6iydc8mot@tcp(139.162.43.200:3306)/cms")
+	db, err = sql.Open("mysql", "pongpat705:d6iydc8mot@tcp(139.162.43.200:3306)/memorandum?parseTime=true")
 
 	// if there is an error opening the connection, handle it
 	if err != nil {
