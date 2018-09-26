@@ -34,11 +34,9 @@ func LoadStorys(ctx iris.Context) {
 
 	var resultData []model.Story
 	resultData = dao.GetStorys()
-	jsonByte := iris.Map{"data": resultData}
 
 	//prepare data
 	ctx.ViewData("storyList", resultData)
-	ctx.ViewData("storyListJson", jsonByte)
 	if err := ctx.View("story.html"); err != nil {
 		ctx.StatusCode(iris.StatusInternalServerError)
 		ctx.Writef(err.Error())

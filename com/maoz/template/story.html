@@ -1,10 +1,20 @@
-<div style="color: blue">
 
-	<h1>Page 2</h1>
-	{{range .storyList}}
-    <li><a href="{{.Id}}">{{.Content}}</a></li>
-	{{end}}
 
-	{{.storyListJson.data}}
-
+<div class="white_box">
+      <div class="content">
+        <div class="content_l">
+          <div class="content_r">
+            <div>
+              <div>
+		           	<h1>สารบัญ</h1>
+								<ul>
+								{{range .storyList}}
+							    <li><a href="{{.Id}}">{{.Content}}</a></li>
+								{{end}}
+								</ul>
+              </div>
+						</div>
+					</div>
+				</div>
+			</div>
 </div>
